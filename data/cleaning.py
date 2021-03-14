@@ -91,7 +91,7 @@ if __name__ == "__main__":
     nola = nola[['player_name', 'batter_name', 'game_date', 'home_team', 'away_team', 'pitch_type', 'batter',
                  'at_bat_number', 'pitch_number', 'inning', 'bat_score', 'fld_score', 'stand', 'balls', 
                  'strikes', 'outs_when_up', 'inning_topbot', 'on_3b', 'on_2b', 'on_1b', 'woba_value',
-                 'launch_speed_angle', 'description', 'des']]
+                 'launch_speed_angle', 'description', 'des', 'game_pk']]
     
     
     nola['game_date'] = pd.to_datetime(nola['game_date'])
@@ -99,4 +99,4 @@ if __name__ == "__main__":
     #L is 1, R is 0; Bot is 1, Top is 0; on-base is 0, 1 is not
     dummyize(nola, ['stand', 'inning_topbot', 'on_3b', 'on_2b', 'on_1b'])
     #nola = create_index(nola)
-    save_df(nola, "Nola_clean")
+    save_df(nola, "Nola_all")
